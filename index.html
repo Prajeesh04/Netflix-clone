@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>netflix</title>
+  </head>
+  <body>
+    <div class="header">
+      <img src="img/logo-bg.png" alt="Netflix Logo" class="logo" />
+
+      <div class="actions">
+        <select name="lang">
+          <option value="eng">English</option>
+          <option value="hindi">Hindi</option>
+        </select>
+        <a href="signin.html" class="signin-btn">Sign In</a>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <h1>Unlimited movies, TV shows <br />and more.</h1>
+        <p>Starts at ₹149. Cancel at any time.</p>
+        <p>
+          Ready to watch? Enter your email to create or restart your membership.
+        </p>
+        <form class="email-form">
+          <div class="input-box" id="email-section">
+            <input type="email" id="email" required />
+            <label for="email">Email address</label>
+          </div>
+          <button type="submit">Get Started &gt;</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Trending-Section -->
+    <section class="trending">
+      <h2>Trending Now</h2>
+      <div class="cards">
+        <div class="card">
+          <img src="img/rajinikanth wallpaper.jpg" alt="coolie" />
+          <span class="number">1</span>
+        </div>
+        <div class="card">
+          <img src="img/war.jpg" alt="War 2" />
+          <span class="number">2</span>
+        </div>
+        <div class="card">
+          <img src="img/spider.jpg" alt="spider-man" />
+          <span class="number">3</span>
+        </div>
+        <div class="card">
+          <img src="img/openhieimer.jpg" alt="openhieimer" />
+          <span class="number">4</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- reasons-section -->
+    <section class="reasons">
+      <h2>More reasons to join</h2>
+      <div class="reason">
+        <h3>Enjoy on your TV</h3>
+        <p>
+          Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray
+          players and more.
+        </p>
+      </div>
+      <div id="item1" class="reason">
+        <h3>Download your shows to watch offline</h3>
+        <p>Save your favourites easily and always have something to watch.</p>
+      </div>
+      <div class="reason">
+        <h3>Watch everywhere</h3>
+        <p>
+          Stream unlimited movies and TV shows on your phone, tablet, laptop and
+          TV.
+        </p>
+      </div>
+      <div class="reason">
+        <h3>Create profiles for kids</h3>
+        <p>
+          Send kids on adventures with their favourite characters in a space
+          made just for them — free with your membership.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          What is Netflix? <span class="icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Netflix is a streaming service that offers a wide variety of
+            award-winning TV shows, movies, anime, documentaries and more – on
+            thousands of internet-connected devices. <br /><br />
+
+            You can watch as much as you want, whenever you want, without a
+            single ad – all for one low monthly price. There's always something
+            new to discover, and new TV shows and movies are added every week!
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          How much does Netflix cost? <span class="icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Watch Netflix on your smartphone, tablet, Smart TV, laptop, or
+            streaming device, all for one fixed monthly fee. Plans range from
+            ₹149 to ₹649 a month. No extra costs, no contracts.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Where i can watch? <span class="icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Watch anywhere, anytime. Sign in with your Netflix account to watch
+            instantly on the web at netflix.com from your personal computer or
+            on any internet-connected device that offers the Netflix app,
+            including smart TVs, smartphones, tablets, streaming media players
+            and game consoles.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          How do i cancel? <span class="icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Netflix is flexible. There are no annoying contracts and no
+            commitments. You can easily cancel your account online in two
+            clicks. There are no cancellation fees – start or stop your account
+            anytime.
+          </p>
+        </div>
+      </div>
+    </section>
+    <script>
+      const faqs = document.querySelectorAll(".faq-item");
+
+      faqs.forEach((faq) => {
+        faq.querySelector(".faq-question").addEventListener("click", () => {
+          faq.classList.toggle("active");
+        });
+      });
+    </script>
+
+    <div class="form2">
+      <p>
+        Ready to watch? Enter your email to create or restart your membership.
+      </p>
+      <form class="email-form2">
+        <div class="input-box">
+          <input type="email" id="email" required />
+          <label for="email">Email address</label>
+        </div>
+        <button type="submit">Get Started &gt;</button>
+      </form>
+    </div>
+
+    <footer>
+      <h4>Questions? Call 000-800-919-1743</h4>
+
+      <div class="footer">
+        <a href="#">FAQ</a>
+        <a href="#">Account</a>
+        <a href="#">Investor</a>
+        <a href="#">Help Center</a>
+        <a href="#">Jobs</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Contact</a>
+        <a href="#">Legal Notices</a>
+      </div>
+    </footer>
+  </body>
+</html>
