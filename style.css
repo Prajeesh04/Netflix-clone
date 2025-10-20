@@ -8,60 +8,62 @@
 
 /* Body */
 body {
-  background: url(img/netflix.jpg) ;
-    background-color: rgba(0,0,0,0.6); /* dim layer */
+    background: url(img/netflix.jpg);
+    background-color: rgba(0,0,0,0.6);
     background-blend-mode: darken; 
-    
     color: white;
 }
+
+/* Logo */
 .logo {
     width: 150px;
 }
 
 /* Header */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    flex-wrap: wrap;
 }
 
 .actions {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 select {
-  background-color: transparent;
-  color: white;
-  border: 1px solid #666;
-  border-radius: 4px;
-  padding: 8px 12px;
-  font-size: 14px;
-  cursor: pointer;
+    background-color: transparent;
+    color: white;
+    border: 1px solid #666;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
 }
 
 option {
-  background-color: white;
-  color: black;
+    background-color: white;
+    color: black;
 }
 
 .signin-btn {
-  background-color: #e50914;
-  color: white;
-  padding: 8px 18px;
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background 0.3s;
+    background-color: #e50914;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s;
 }
 
 .signin-btn:hover {
-  background-color: #b20710;
+    background-color: #b20710;
 }
-
 
 /* Hero Section */
 .hero {
@@ -75,6 +77,7 @@ option {
     align-items: center;
     text-align: center;
     color: white;
+    padding: 0 20px;
 }
 
 .hero h1 {
@@ -100,6 +103,7 @@ option {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     margin-top: 20px;
 }
 
@@ -112,6 +116,7 @@ option {
 input {
     padding: 12px 20px;
     width: 300px;
+    max-width: 100%;
     border-radius: 3px;
     border: 1px solid #666;
     background-color: transparent;
@@ -126,74 +131,84 @@ input:focus {
 
 label {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 3%;
     font-size: 16px;
     color: #999;
     transition: all 0.3s;
     pointer-events: none;
-    transform: translateY(0);
-}
-.input-box label {
-  top: 50%;
-  left: 3%;
-  transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 .input-box input:focus + label,
-    .input-box input:valid + label {
-      top: 6px;
-      font-size: 12px;
-      color: #e50914; 
+.input-box input:valid + label {
+    top: 6px;
+    font-size: 12px;
+    color: #e50914; 
 }
 
-.email-form button {
-      margin-top: 9px;
-      padding: 12px 20px;
-      background: #e50914;
-      border: none;
-      border-radius: 4px;
-      color: #fff;
-      font-size: 16px;
-      cursor: pointer;
-    }
+.email-form button, .form2 button {
+    margin-top: 9px;
+    padding: 12px 20px;
+    background: #e50914;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
 
-    .email-form button:hover {
-      background: #a9050d;
-    }
+.email-form button:hover,
+.form2 button:hover {
+    background: #a9050d;
+}
 
 /* Trending Section */
 .trending {
-  cursor: pointer;
+    cursor: pointer;
     padding: 40px 0;
-    background-color: #000000;
-    
+    background-color: #000;
+    width: 100%; /* full width */
+    overflow: hidden;
 }
 
 .trending h2 {
     font-size: 1.5rem;
     margin-bottom: 20px;
-    margin-left: 15px ;
-  }
+    margin-left: 15px;
+}
 
+
+/* Cards */
 .cards {
-  max-width: 100%;
     display: flex;
-    justify-content: center;
     gap: 20px;
+    overflow-x: auto; /* horizontal scrolling on small screens */
+    padding-left: 15px;
+    scrollbar-width: none; /* Firefox */
+    scroll-snap-type: x mandatory; /* smooth snap like Netflix */
+}
+
+.cards::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
 }
 
 .card {
-    position: relative;
-    width: 200px;
+    flex: 0 0 200px; /* card width on desktop */
     height: 300px;
-    overflow: hidden;
+    scroll-snap-align: start; /* snap to start */
     border-radius: 8px;
     transition: transform 0.3s;
 }
 
 .card:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+}
+
+
+.card:hover {
+    transform: scale(1.05);
 }
 
 .card img {
@@ -207,10 +222,6 @@ label {
     bottom: 10px;
     left: 1px; 
     font-weight: 900;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 5px;
-    border-radius: 5px;
     font-size: 120px;
     line-height: 0.8;
     font-family: "Impact", "Arial Black", sans-serif;
@@ -219,133 +230,200 @@ label {
     background-color: transparent;
 }
 
-.reasons{
-  background-color: #000;
-  padding: 30px 20px;
-  
-  
-}
-.reasons h2{
-  font-size: 25px;
-  margin-bottom:20px ;
-}
-.reason{
-  
-  cursor: pointer;
-  background: linear-gradient(to right, #0a1b3d, #12021a);
-  border-radius: 12px;
-  padding: 30px;
-  margin: 15px auto;
-}
-.reason h3{
-  color: #ccc;
-  position: relative;
-  padding-bottom:10px;
-  bottom: 15px;
-  font-size: 20px;
-
-}
-.reason p{
-  color: #ccc;
+/* Reasons Section */
+.reasons {
+    background-color: #000;
+    padding: 30px 20px;
 }
 
-.faq{
-  background-color: #000;
-  max-width: 800px;
-  max-width: 100%;
-  margin: 20px auto;
-  padding: 10px 20px;
-  
+.reasons h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
 }
+
+.reason {
+    cursor: pointer;
+    background: linear-gradient(to right, #0a1b3d, #12021a);
+    border-radius: 12px;
+    padding: 30px;
+    margin: 15px auto;
+}
+
+.reason h3 {
+    color: #ccc;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.reason p {
+    color: #ccc;
+}
+
+/* FAQ Section */
+.faq {
+    background-color: #000;
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 10px 20px;
+}
+
 .faq h2 {
-  font-size: 1.5rem;
-  
-  margin-bottom: 30px;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
 }
+
 .faq-item {
-  padding:5px ;
-  border-bottom: 1px none #333;
+    padding: 5px;
+    border-bottom: 1px none #333;
 }
+
 .faq-question {
-  background: #303030;
-  color: #fff;
-  font-size: 1.2rem;
-  width: 100%;
-  
-  padding: 20px;
-  border:none;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    background: #303030;
+    color: #fff;
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 20px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .faq-answer {
-  background: #1a1a1a;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
-  padding: 0 20px;
+    background: #1a1a1a;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 20px;
 }
 
 .faq-item.active .faq-answer {
-  max-height: 500px; 
-  padding: 20px;
+    max-height: 500px; 
+    padding: 20px;
 }
 
 .icon {
-  font-size: 1.5rem;
-  transition: transform 0.3s ease;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
 }
 
 .faq-item.active .icon {
-  transform: rotate(45deg); /* turns "+" into "x" */
+    transform: rotate(45deg);
 }
 
-
-.form2 p{
-  padding: 10px;
-  text-align: center;
-}
-.form2 button{
-  margin-top: 9px;
-      padding: 12px 20px;
-      background: #e50914;
-      border: none;
-      border-radius: 4px;
-      color: #fff;
-      font-size: 16px;
-      cursor: pointer;
+/* Footer */
+footer {
+    background-color: black;
+    padding: 10px;
 }
 
-.form2 button:hover{
-  background-color: #a9050d;
+.footer {
+    display: grid;
+    padding: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
 }
 
-footer{
-  background-color: black;
-  position: relative;
-  top: 20px;
-  padding: 10px;
-}
-.footer{
-  display: grid;
-  padding: 30px;
-  grid-template-columns: repeat(3,100px);
-  gap: 40px;
-  justify-content: space-between;
-  
+.footer a {
+    color: white;
+    transition: 0.3s ease;
 }
 
-.footer a{
-  color: white;
-  transition: 0.3s ease;
+.footer a:hover {
+    color: #e50914;
+    transform: scale(1.1);
 }
 
-.footer a:hover{
-  color: #e50914;
-  transform: scale(1.1);
-  
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 1024px) {
+    .hero h1 { font-size: 1.8rem; }
+    .hero h2 { font-size: 1.2rem; }
+    .hero p { font-size: 0.95rem; }
+
+    .cards {
+        gap: 15px;
+    }
+
+    .card {
+        flex: 0 0 160px;
+        height: 240px;
+    }
+
+    .footer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
 }
 
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .hero {
+        height: auto;
+        padding: 40px 20px;
+        top: 0;
+        text-align: center;
+    }
+
+    .hero h1 { font-size: 1.5rem; }
+    .hero h2 { font-size: 1.1rem; }
+    .hero p { font-size: 0.9rem; }
+
+    .email-form input {
+        width: 90%;
+    }
+
+    .cards {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+
+    .card {
+        flex: 0 0 150px;
+        height: 220px;
+    }
+
+    .reasons {
+        padding: 20px 10px;
+    }
+
+    .reason {
+        padding: 20px;
+    }
+
+    .faq-question {
+        font-size: 1rem;
+        padding: 15px;
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .footer a {
+        font-size: 14px;
+    }
+}
+/* Tablet screens */
+@media (max-width: 1024px) {
+    .card {
+        flex: 0 0 180px; /* slightly smaller */
+        height: 270px;
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 600px) {
+    .card {
+        flex: 0 0 140px; /* small cards for mobile */
+        height: 200px;
+    }
+}
 

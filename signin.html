@@ -1,47 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="signin.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link rel="stylesheet" href="signin.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>netflixsignin</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- ✅ Logo stays independent at the top -->
     <div class="logo">
-        <img src="img/logo-bg.png" alt="netflix logo">
+      <img src="img/logo-bg.png" alt="netflix logo" />
     </div>
 
     <!-- ✅ Form section centered properly -->
     <div class="container">
-        <div class="form-container">
-            <form action="" method="post">
-                <h1>Sign In</h1>
-                
-                <div class="input-box">
-                    <input type="text" name="email-form" required placeholder=" " />
-                    <label>Email or mobile number</label>
-                </div>
-                
-                <div class="input-box">
-                    <input type="password" name="pass-form" required placeholder=" " />
-                    <label>Password</label>
-                </div>
-                
-                <input type="submit" value="Sign In" class="submit">
-                
-                <h3>OR</h3>
-                <input type="submit" value="Use a Sign-in code" class="submit">
-                
-                <a href="#" id="forget">Forgot Password?</a>
-                <br><br>
-                <div class="remember">
-                    <label for="remember" id="reme">Remember me</label>
-                    <input type="checkbox" name="remember" id="remember"> 
-                </div>
-                <p>New to Netflix? <a href="index.html#email-section">Sign up now.</a></p>
-            </form>
-        </div>
-    </div>
-</body>
+      <div class="form-container">
+        <form action="" method="post">
+          <h1>Sign In</h1>
 
+          <div class="input-box">
+            <input type="text" name="email-form" required placeholder=" " />
+            <label>Email or mobile number</label>
+          </div>
+
+          <div class="input-box">
+            <input type="password" name="pass-form" required placeholder=" " />
+            <label>Password</label>
+          </div>
+
+          <input type="submit" value="Sign In" class="submit" />
+
+          <h3>OR</h3>
+          <input type="submit" value="Use a Sign-in code" class="submit" />
+
+          <a href="#" id="forget">Forgot Password?</a>
+          <br /><br />
+          <div class="remember">
+            <input type="checkbox" name="remember" id="remember" />
+            <label for="remember" id="reme">Remember me</label>
+          </div>
+
+          <p>
+            New to Netflix? <a href="index.html#email-section">Sign up now.</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

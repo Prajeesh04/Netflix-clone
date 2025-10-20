@@ -10,6 +10,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
 }
 
 /* Netflix logo */
@@ -23,24 +24,13 @@ body {
 }
 
 .container {
-  display: blo;
+  display: block;
   justify-content: flex-start;
   width: 100%;
   max-width: 450px;
 }
 
-/* Container */
-.form-container {
-  background: rgba(0, 0, 0, 0.75);
-  padding: 40px;
-  border-radius: 5px;
-  color: white;
-}
-.signin-page img {
-  width: 160px;
-  margin: 20px 0 0 40px;
-}
-/* Sign-in form */
+/* Sign-in container */
 form {
   background: rgba(0,0,0,0.75);
   padding: 60px 68px 40px;
@@ -48,9 +38,9 @@ form {
   width: 300px;
   display: flex;
   flex-direction: column;
-  margin-bottom: 0;  /* ✅ fix */
+  margin-bottom: 0;
+  box-sizing: border-box;
 }
-
 
 /* Title */
 form h1 {
@@ -59,16 +49,11 @@ form h1 {
   font-weight: bold;
 }
 
-/* Input container for floating label */
+/* Input box */
 .input-box {
   position: relative;
   margin-bottom: 20px;
 }
-.input-box:focus{
-    outline: none;
-    border-color: #e50914;
-}
-
 .input-box input {
   width: 100%;
   padding:12px;
@@ -78,12 +63,10 @@ form h1 {
   color: white;
   font-size: 16px;
 }
-
 .input-box input:focus {
   outline: none;
   background: #444;
 }
-
 .input-box label {
   position: absolute;
   top: 50%;
@@ -94,8 +77,6 @@ form h1 {
   pointer-events: none;
   transition: 0.3s ease;
 }
-
-/* Floating effect */
 .input-box input:focus + label,
 .input-box input:not(:placeholder-shown) + label {
   top: 8px;
@@ -103,7 +84,7 @@ form h1 {
   color: #e50914;
 }
 
-/* Buttons */
+/* Submit button */
 .submit {
   margin-top: 20px;
   padding: 12px;
@@ -116,12 +97,11 @@ form h1 {
   font-weight: bold;
   cursor: pointer;
 }
-
 .submit:hover {
   background: #ae060e;
 }
 
-/* "OR" text */
+/* "OR" */
 form h3 {
   text-align: center;
   margin: 15px 0;
@@ -131,50 +111,107 @@ form h3 {
   padding-top: 20px;
 }
 
-/* Links and text */
+/* Forget pass */
 #forget {
-    position: relative;
-    top: 5px;
+  position: relative;
+  top: 5px;
   color: #fff;
   font-size: 14px;
   text-decoration: none;
 }
-
 #forget:hover {
   text-decoration: underline;
 }
 
-form label {
-  font-size: 14px;
-  color: #b3b3b3;
-}
-
+/* Text and link */
 form p {
   margin-top: 30px;
   font-size: 16px;
   color: #737373;
 }
-
 form p a {
   color: white;
   text-decoration: none;
 }
-
 form p a:hover {
   text-decoration: underline;
 }
 
-.remember{
-
+/* Remember row */
+.remember {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  color: #b3b3b3;
+  font-size: 14px;
 }
 
-#remember{
+.remember input {
+  width: 16px;
+  height: 16px;
   cursor: pointer;
 }
 
-html, body {
-  height: 100%;
-  overflow-y: hidden;  /* Removes unwanted scroll */
+.remember label {
+  cursor: pointer;
+}
+
+#remember {
+  color: white;
+  cursor: pointer;
+}
+
+/* ✅ RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .logo img {
+    width: 120px;
+    left: 20px;
+  }
+
+  form {
+    width: 90%;
+    padding: 40px 40px 30px;
+  }
+
+  form h1 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .logo {
+    top: 10px;
+    left: 15px;
+  }
+  .logo img {
+    width: 100px;
+  }
+
+  form {
+    width: 100%;
+    padding: 30px 20px;
+  }
+
+  form h1 {
+    font-size: 24px;
+  }
+
+  .submit {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .input-box input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .input-box label {
+    font-size: 14px;
+  }
 }
