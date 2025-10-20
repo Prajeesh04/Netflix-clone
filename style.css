@@ -195,6 +195,7 @@ label {
 }
 
 .card {
+     position: relative;
     flex: 0 0 200px; /* card width on desktop */
     height: 300px;
     scroll-snap-align: start; /* snap to start */
@@ -220,7 +221,7 @@ label {
 .number {
     position: absolute;
     bottom: 10px;
-    left: 1px; 
+    left: 10px; 
     font-weight: 900;
     font-size: 120px;
     line-height: 0.8;
@@ -228,6 +229,7 @@ label {
     color: #000;
     -webkit-text-stroke: 1px rgb(232, 227, 227);
     background-color: transparent;
+    pointer-events: none;
 }
 
 /* Reasons Section */
@@ -354,6 +356,11 @@ footer {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
+    .number {
+    font-size: 90px;
+    left: 8px;
+    bottom: 8px;
+}
 }
 
 @media (max-width: 600px) {
@@ -387,6 +394,12 @@ footer {
         flex: 0 0 150px;
         height: 220px;
     }
+
+    .number {
+    font-size: 70px;
+    left: 6px;
+    bottom: 6px;
+  }
 
     .reasons {
         padding: 20px 10px;
@@ -426,4 +439,3 @@ footer {
         height: 200px;
     }
 }
-
