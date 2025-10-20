@@ -195,7 +195,7 @@ label {
 }
 
 .card {
-     position: relative;
+    position: relative;
     flex: 0 0 200px; /* card width on desktop */
     height: 300px;
     scroll-snap-align: start; /* snap to start */
@@ -229,7 +229,7 @@ label {
     color: #000;
     -webkit-text-stroke: 1px rgb(232, 227, 227);
     background-color: transparent;
-    pointer-events: none;
+    
 }
 
 /* Reasons Section */
